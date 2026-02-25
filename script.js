@@ -17,17 +17,20 @@ const projects = [
   {
     role: "Timber Volume Calculator",
     period: "Tech: HTML, CSS, JavaScript",
-    text: "Designed to solve real-world timber volume calculation and record keeping challenges."
+    text: "Designed to solve real-world timber volume calculation and record keeping challenges.",
+    link: "https://nirmeshpatel.github.io/timber-volume-calculator/"
   },
   {
     role: "Timetable Management",
     period: "Tech: HTML, CSS, JavaScript",
-    text: "Built a web-based timetable management system for organizing academic schedules efficiently."
+    text: "Built a web-based timetable management system for organizing academic schedules efficiently.",
+    link: "https://nirmeshpatel.github.io/study-planner/"
   },
   {
     role: "Developer Portfolio Website",
     period: "Tech: HTML, CSS, JavaScript",
-    text: "Designed and developed a personal portfolio website to showcase projects, skills, and contact information."
+    text: "Designed and developed a personal portfolio website to showcase projects, skills, and contact information.",
+    link: "https://nirmeshpatel.github.io/"
   }
 ];
 
@@ -73,7 +76,7 @@ function renderTimeline(id, items) {
   root.innerHTML = items
     .map(
       (item) =>
-        `<article class="item"><h3>${item.role}</h3><span>${item.period}</span><p>${item.text}</p></article>`
+        `<article class="item"><h3>${item.role}</h3><span>${item.period}</span><p>${item.text}</p>${item.link ? `<a class="project-view-btn" href="${item.link}" target="_blank" rel="noreferrer">View</a>` : ""}</article>`
     )
     .join("");
 }
@@ -198,4 +201,3 @@ setupMenu();
 setupReveal();
 setupTyping();
 document.getElementById("year").textContent = new Date().getFullYear();
-
